@@ -1,27 +1,27 @@
 # AdminProxyLogin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 17.3.8.
 
-## Development server
+## Servidor de Desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para iniciar el servidor de desarrollo, ejecuta `ng serve`. Luego, navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si realizas cambios en alguno de los archivos fuente.
 
-## Code scaffolding
+## Estructura de Código
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Puedes generar un nuevo componente utilizando el comando `ng generate component nombre-componente`. También tienes la opción de generar directivas, pipes, servicios, clases, guards, interfaces, enums y módulos usando `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Compilación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para compilar el proyecto, ejecuta `ng build`. Los archivos generados se almacenarán en el directorio `dist/`.
 
-## Running unit tests
+## Ejecución de Pruebas Unitarias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para ejecutar las pruebas unitarias, utiliza el comando `ng test`. Esto ejecutará las pruebas a través de [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ejecución de Pruebas End-to-End
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para ejecutar las pruebas end-to-end, utiliza el comando `ng e2e`. Esto ejecutará las pruebas a través de una plataforma de tu elección. Antes de ejecutar este comando, asegúrate de agregar un paquete que implemente las capacidades de pruebas end-to-end.
 
-## Further help
+## Ayuda Adicional
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obtener más ayuda sobre Angular CLI, puedes utilizar `ng help` o visitar la [Página de Descripción General y Referencia de Comandos de Angular CLI](https://angular.io/cli).
