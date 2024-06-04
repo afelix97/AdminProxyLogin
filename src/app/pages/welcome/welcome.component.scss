@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
+
+.bienvenido-container {
+  text-align: center;
+  font-size: 150px;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 800;
+  margin: 20px 15px;
+}
+
+.bienvenido-container>span {
+  display: inline-block;
+  line-height: 0.7;
+  position: relative;
+  color: #007FB2;
+}
+
+.bienvenido-container>span {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* demo stuff */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+}
+
+.zoom-area {
+  max-width: 890px;
+  margin: 30px auto 30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.link-container {
+  text-align: center;
+}
+
+
+svg {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+
+.message-box {
+  height: 200px;
+  width: 60%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -450px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.message-box h1 {
+  font-size: 60px;
+  line-height: 46px;
+  margin-bottom: 40px;
+}
+
+#Polygon-1,
+#Polygon-2,
+#Polygon-3,
+#Polygon-4,
+#Polygon-4,
+#Polygon-5 {
+  -webkit-animation: float 1s infinite ease-in-out alternate;
+  animation: float 1s infinite ease-in-out alternate;
+}
+
+#Polygon-2 {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+}
+
+#Polygon-3 {
+  -webkit-animation-delay: .4s;
+  animation-delay: .4s;
+}
+
+#Polygon-4 {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+
+#Polygon-5 {
+  -webkit-animation-delay: .8s;
+  animation-delay: .8s;
+}
+
+@-webkit-keyframes float {
+  100% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes float {
+  100% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  svg {
+    top: 20%;
+    left: 30%;
+  }
+
+  .message-box {
+    top: 60%;
+    left: 400px;
+    width: 100%;
+  }
+
+  .bienvenido-container>span {
+    font-size: 120px !important;
+  }
+}
