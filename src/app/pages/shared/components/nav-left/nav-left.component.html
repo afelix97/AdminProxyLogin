@@ -1,0 +1,11 @@
+<a  class="navbar-brand animated " [routerLink]="['home']"><img alt="logo sistema" class="img-fluid logoNav" src="assets/img/logo/logoadmin.png"></a>
+<mat-divider></mat-divider>
+<mat-list>
+  @for (folder of folders; track folder) {
+    <mat-list-item >
+      <mat-icon matListItemIcon class="text-white">folder</mat-icon>
+      <div matListItemTitle class="text-white">{{folder.name}}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  }
+</mat-list>
