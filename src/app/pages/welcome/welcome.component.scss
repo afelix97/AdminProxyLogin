@@ -34,29 +34,23 @@ h2 {
 }
 
 .zoom-area {
-  max-width: 890px;
-  margin: 30px auto 30px;
   font-size: 25px;
   text-align: center;
+  left: 80% !important;
 }
-
-.link-container {
-  text-align: center;
-}
-
 
 svg {
   position: absolute;
   top: 10%;
-  left: 30%;
+  left: 33%;
 }
 
 .message-box {
   height: 200px;
-  width: 60%;
+  width: 80%;
   position: absolute;
   top: 55%;
-  left: 50%;
+  left: 40%;
   margin-top: -250px;
   margin-left: -450px;
   font-weight: 300;
@@ -128,5 +122,31 @@ svg {
 
   .bienvenido-container>span {
     font-size: 120px !important;
+  }
+}
+
+
+@media (max-width: 450px) {
+  svg {
+    top: 20%;
+    left: 0px;
+  }
+
+  .message-box {
+    top: 60%;
+    width: 100%;
+    font-size: 60px;
+  }
+
+  .bienvenido-container>span {
+    font-size: 50px !important;
+    left: 10%;
+    width: 100%;
+  }
+  .zoom-area{
+    left: 30% !important;
+    margin: 0px;
+    margin-left: 50px;
+    font-size: 25px !important;
   }
 }

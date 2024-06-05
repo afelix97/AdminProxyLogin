@@ -1,7 +1,7 @@
 <!--  @if (!showNavLeft) {
     <a  class="navbar-brand animated " [routerLink]="['home']"><img alt="logo sistema" class="img-fluid logoNav" src="assets/img/logo/logoadmin.png"></a>
   }-->
-  
+
      <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         @if (!showNavLeft) {
@@ -9,30 +9,29 @@
         }
         <button mat-raised-button (click)="ocultarMenu()" class="rounded-pill text-center">
           @if (showNavLeft) {
-            <mat-icon class="p-0 m-0">menu_open</mat-icon>
+            <mat-icon class="m-0 icons-options">menu_open</mat-icon>
           } @else {
-            <mat-icon class="p-0 m-0">menu</mat-icon>
+            <mat-icon class="m-0 icons-options">menu</mat-icon>
           }
         </button>
         @if(!fullScreenGestor){
-          <button mat-raised-button class="rounded-pill text-center custom-button" (click)="openFullscreen()"><mat-icon class="custom-icon">fullscreen</mat-icon></button>
+          <button mat-raised-button (click)="openFullscreen()" class="rounded-pill text-center ">
+            <mat-icon class="m-0 icons-options">fullscreen</mat-icon>
+          </button>
         } @else {
-          <button mat-raised-button class="rounded-pill text-center custom-button" (click)="closeFullscreen()"><mat-icon class="custom-icon">fullscreen_exit</mat-icon></button>
+          <button mat-raised-button (click)="closeFullscreen()" class="rounded-pill text-center ">
+            <mat-icon class="m-0 icons-options">fullscreen_exit</mat-icon>
+          </button>
         }
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+           <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+            </li>-->
           </ul>
           <div class="d-flex">
-            <button mat-raised-button [matMenuTriggerFor]="menuConfig" class="btn-config rounded-pill">Usuario <mat-icon>settings</mat-icon></button>
+            <button mat-raised-button [matMenuTriggerFor]="menuConfig" class="btn-config rounded-pill">Nombre usuario <mat-icon>settings</mat-icon></button>
             <mat-menu #menuConfig="matMenu" xPosition="after" class="bg-dark">
               <button mat-menu-item class="text-white"><mat-icon class="text-danger">power_settings_new</mat-icon> Cerrar Sesión</button>
             </mat-menu>
@@ -40,7 +39,7 @@
         </div>
       </div>
     </nav>
-<!-- 
+<!--
     <nav class="navbar navbar-light border-bottom border-body navbar-expand-sm sticky-top" data-bs-theme="dark">
   <div class="container-fluid">
     @if (!showNavLeft) {

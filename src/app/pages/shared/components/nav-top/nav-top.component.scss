@@ -3,32 +3,39 @@
   width: 264px !important;
 }
 
-.mat-mdc-menu-content{
+.mat-mdc-menu-content {
   padding: 0px !important;
 }
-.bg-body-tertiary{
+
+.bg-body-tertiary {
   background-color: rgb(241, 241, 241) !important;
   border-bottom: black !important;
 }
 
-.btn-config{
+.btn-config {
   background-color: rgba(255, 255, 255, 0.363) !important;
   font-size: 16px !important;
 }
 
-.custom-button {
+.icons-options {
+  font-size: 25px !important;
+  height: 25px !important;
+  width: 25px !important;
+}
+
+/*
+.custom-icon {
+  font-size: 30px !important;
+  vertical-align: center !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  line-height: 40px !important;
-  height: 100px !important;
-  width: 100px !important;
-
+  height: 100% !important;
+  width: 100% !important;
 }
 
-.custom-icon {
-  font-size: 30px !important;
-  vertical-align: middle !important;
-  height: 100px !important;
-  width: 100px !important;
-}
+.btn-screen {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}*/
