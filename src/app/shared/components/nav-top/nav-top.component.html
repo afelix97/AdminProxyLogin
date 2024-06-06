@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+<div class="container-fluid">
+  <div [class.w-100]="isMobileDevice()" [class.d-flex]="isMobileDevice()" [class.justify-content-start]="isMobileDevice()">
+  @if (!showNavLeft) {
+      <a class="navbar-brand animated" [routerLink]="['welcome']"><img alt="logo sistema" class="img-fluid logoNav" src="assets/img/logo/Admin-Proxy-Login.png"></a>
+  }
+    <button mat-raised-button (click)="ocultarMenu()" class="rounded-pill">
+      @if (showNavLeft) {
+        <mat-icon class="m-0 icons-options">menu_open</mat-icon>
+      } @else {
+        <mat-icon class="m-0 icons-options">menu</mat-icon>
+      }
+    </button>
+    @if(!fullScreenGestor){
+      <button mat-raised-button (click)="openFullscreen()" class="rounded-pill ">
+        <mat-icon class="m-0 icons-options">fullscreen</mat-icon>
+      </button>
+    } @else {
+      <button mat-raised-button (click)="closeFullscreen()" class="rounded-pill ">
+        <mat-icon class="m-0 icons-options">fullscreen_exit</mat-icon>
+      </button>
+    }
+  </div>
+
+  <div [class.w-100]="isMobileDevice()">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+    </ul>
+    <div class="d-flex">
+      <button mat-raised-button [class.w-100]="isMobileDevice()" [matMenuTriggerFor]="menuConfig" class="btn-config rounded-pill">Nombre usuario <mat-icon>settings</mat-icon></button>
+      <mat-menu #menuConfig="matMenu" xPosition="after" class="bg-dark">
+        <button mat-menu-item class="text-white"><mat-icon class="text-danger">power_settings_new</mat-icon> Cerrar Sesión</button>
+      </mat-menu>
+    </div>
+  </div>
+</div>
+</nav>

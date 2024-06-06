@@ -34,25 +34,22 @@ h2 {
 }
 
 .zoom-area {
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
-  left: 80% !important;
 }
 
 svg {
-  position: absolute;
-  top: 10%;
-  left: 33%;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
 }
 
 .message-box {
   height: 200px;
-  width: 80%;
+  width: 100%;
   position: absolute;
   top: 55%;
-  left: 40%;
   margin-top: -250px;
-  margin-left: -450px;
   font-weight: 300;
   text-align: center;
 }
@@ -143,10 +140,13 @@ svg {
     left: 10%;
     width: 100%;
   }
-  .zoom-area{
-    left: 30% !important;
+
+  .zoom-area {
     margin: 0px;
-    margin-left: 50px;
-    font-size: 25px !important;
+    text-align: center;
   }
+}
+
+.text-shadow {
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
 }

@@ -2,6 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@guards/*":["app/core/guards/*"],
+      "@interceptors/*":["app/core/interceptors/*"],
+      "@pages/*":["app/pages/*"],
+      "@shared/*":["app/shared/*"]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,

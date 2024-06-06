@@ -1,0 +1,39 @@
+.logoNav {
+  height: 45px !important;
+  width: 264px !important;
+  margin: 2px;
+  padding: 3;
+}
+
+/* Enlace sin subrayado y comportamiento de bloque */
+.list-item-link {
+  text-decoration: none !important;
+  display: block !important;
+}
+
+/* Estilos básicos del elemento de la lista */
+.list-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 10px !important;
+  transition: background-color 0.3s, transform 0.3s !important;
+  cursor: pointer !important;
+  color: white !important;
+}
+
+/* Efecto hover */
+.list-item:hover {
+  background-color: #1c1f20 !important;
+  /* Cambia esto al color de fondo que prefieras */
+  transform: scale(0.95) !important;
+  /* Añade un pequeño aumento de tamaño en hover */
+}
+
+/* Estilo del elemento activo */
+.list-item-link.active .list-item {
+  background-color: #1c1f20 !important;
+  /* Cambia esto al color de fondo que prefieras para el elemento activo */
+  color: white !important;
+  /* Asegura que el texto sea visible */
+  transform: scale(0.95) !important;
+}

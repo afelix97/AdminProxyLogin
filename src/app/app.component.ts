@@ -1,15 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavTopComponent } from './pages/shared/components/nav-top/nav-top.component';
 import { MatDrawer, MatDrawerMode, MatSidenavModule } from '@angular/material/sidenav';
-import { NavLeftComponent } from './pages/shared/components/nav-left/nav-left.component';
+import { NavTopComponent } from '@shared/components/nav-top/nav-top.component';
+import { NavLeftComponent } from '@shared/components/nav-left/nav-left.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavTopComponent, MatSidenavModule, NavLeftComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'App component';
@@ -20,4 +21,7 @@ export class AppComponent {
 
   @ViewChild('drawer') drawer!: MatDrawer;
 
+  isMobileDevice(): boolean {
+      return window.innerWidth <= 600;
+  }
 }

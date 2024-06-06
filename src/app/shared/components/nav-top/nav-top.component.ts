@@ -69,4 +69,7 @@ export class NavTopComponent {
       this.fullScreenGestor = false;
     }
   }
+  isMobileDevice(): boolean {
+    return window.innerWidth <= 600;
+  }
 }
