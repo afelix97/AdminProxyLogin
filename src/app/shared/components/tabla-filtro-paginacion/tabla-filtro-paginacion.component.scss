@@ -6,3 +6,11 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
+.div-fijo-scroll {
+  position: -webkit-sticky;
+  /* Para navegadores basados en WebKit */
+  position: sticky;
+  top: 50px;
+  /* Mismo valor que la altura de la barra de navegación */
+}

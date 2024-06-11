@@ -1,9 +1,10 @@
 <mat-drawer-container class="contenedor-drawer" [hasBackdrop]="hasBackdrop">
-  <mat-drawer #drawer [mode]="isMobileDevice()?mode[2]:mode[0]" [opened]="showNavLeft" class="drawer text-light bg-dark bg-gradient">
-    <app-nav-left/>
+  <mat-drawer #drawer [mode]="isMobileDevice()?mode[2]:mode[0]" [opened]="showNavLeft"
+    class="drawer text-light bg-dark bg-gradient">
+    <app-nav-left />
   </mat-drawer>
-  <mat-drawer-content class="bg-content">
-    <app-nav-top [drawer]="drawer" [showNavLeft]="showNavLeft"/>
+  <mat-drawer-content class="bg-content" [class]="isViewWelcome ? 'bg-gradient bg-light' : ''">
+    <app-nav-top [drawer]="drawer" [showNavLeft]="showNavLeft" />
     <router-outlet />
   </mat-drawer-content>
 </mat-drawer-container>
