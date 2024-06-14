@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TablaFiltroPaginacionComponent } from '@shared/components/tabla-filtro-paginacion/tabla-filtro-paginacion.component';
+import { ActionOptions } from '@shared/components/tabla-filtro-paginacion/interfaces/action-options.interface';
+import { DisplayedColumn } from '@shared/components/tabla-filtro-paginacion/interfaces/diplayed-column.interface';
 
 export interface UserData {
   id: string;
@@ -10,13 +12,13 @@ export interface UserData {
 
 /** Constants used to fill up our data base. */
 const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
+  'blueberry lorem iaisifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii sfiis asifi sfsii aasi sfsaii',
+  'lychee iais sfiis aiaifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaiiis sfiis asifi sfsii aasi sfsaiisifi sfsii aasi sfsaii',
+  'kiwiais sfiis asifiifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii sfsii aasi sfsaiii',
+  'mangoiais sfiis asifi iais sfiis asifi sfsii aasi sfsaiisfsii aasi sfsaii',
+  'peach iais sfiis asifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii',
+  'lime iais sfiis asifi sfsii aasi sfsiais sfiis asiais sfiis asifi sfsii aasi sfsaiiifi sfsii aasi sfsaiiaii ',
+  'pomegranate iaifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaii  iais sfiis asifi sfsii aasi sfsaiiis sfiis asifi sfsii aasi sfsaii',
   'pineapple',
 ];
 const NAMES: string[] = [
@@ -49,8 +51,21 @@ const NAMES: string[] = [
   styleUrl: './list-configurations.component.scss'
 })
 export class ListConfigurationsComponent {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit']
+  displayedColumns: DisplayedColumn[] = [
+    { columName: 'id', aliasColumn: 'ID' },
+    { columName: 'name', aliasColumn: 'Nombre' },
+    { columName: 'progress', aliasColumn: 'Progreso' },
+    { columName: 'fruit', aliasColumn: 'Fruta' }
+  ];
   dataUsers: UserData[] = [];
+
+  //Objeto para el componente de tabla-filtro-pagination, para la columna de acciones
+  actionsOptions: ActionOptions = {
+    visible: true,
+    viewAction: this.viewRow,
+    editAction: this.editRow,
+    deleteAction: this.deleteRow,
+  }
 
 
   ngOnInit() {
@@ -75,4 +90,18 @@ export class ListConfigurationsComponent {
     };
   }
 
+  viewRow(row: any) {
+    console.log('Viewing row:', row);
+    // Lógica para ver el elemento
+  }
+
+  editRow(row: any) {
+    console.log('Editing row:', row);
+    // Lógica para editar el elemento
+  }
+
+  deleteRow(row: any) {
+    console.log('Deleting row:', row);
+    // Lógica para eliminar el elemento
+  }
 }

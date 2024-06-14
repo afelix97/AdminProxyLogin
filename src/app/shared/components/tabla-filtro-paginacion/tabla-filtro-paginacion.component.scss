@@ -14,3 +14,15 @@ table {
   top: 50px;
   /* Mismo valor que la altura de la barra de navegación */
 }
+.icon-info{
+  padding-top: 1.1px;
+}
+#actions{
+  width: 180px !important;
+}
+
+/* styles.scss o el archivo SCSS correspondiente a tu componente */
+.table-hover-row:hover {
+  background-color: #eef6f798; /* Cambia este color según tus necesidades */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que se puede hacer clic */
+}
