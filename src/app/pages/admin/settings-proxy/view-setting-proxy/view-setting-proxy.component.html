@@ -1,0 +1,29 @@
+<h2 mat-dialog-title><b class="text-muted">Detalle de la configuracion #{{ data.content_configuration_id }}:</b></h2>
+<hr>
+<mat-dialog-content>
+
+  <p><strong>Name:</strong> {{ data.name }}</p>
+  <p><strong>Application:</strong> {{ data.type }}</p>
+  <p><strong>Category:</strong> {{ data.category }}</p>
+  <p><strong>Valor:</strong> {{ data.value }}</p>
+  @if(data.creation_date){
+  <p><strong>Fecha en que se dio de alta:</strong> {{ data.creation_date }}</p>
+  }
+  @if(data.change_date){
+  <p><strong>Ultima fecha Actualización:</strong> {{ data.change_date }}</p>
+  }
+  @if(data.created_by){
+  <p><strong>Creado por:</strong> {{ data.created_by }}</p>
+  }
+  @if(data.changed_by){
+  <p><strong>Actualizado por:</strong> {{ data.changed_by }}</p>
+  }
+  @if(data.version){
+  <p><strong>Version:</strong> {{ data.version }}</p>
+  }
+
+</mat-dialog-content>
+<hr>
+<mat-dialog-actions class="justify-content-center">
+  <button mat-raised-button mat-dialog-close class="mb-2">OK</button>
+</mat-dialog-actions>

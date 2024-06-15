@@ -1,13 +1,25 @@
 <div class="row">
-  <div class="con-12 mt-3">
+  <div class="col-12 mt-3">
     <mat-form-field class="shadow border border-dark border-bottom-0 border-1 rounded-top">
       <mat-label><b>Filtrar</b></mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Escribir aquí..." #input>
       <mat-hint align="start" class="text-muted"><i><mat-icon class="icon-info">info</mat-icon>Filtra el contenido de la
-          tabla...</i></mat-hint>
+          tabla... <mat-icon>arrow_upward</mat-icon></i>
+      </mat-hint>
     </mat-form-field>
   </div>
-  <div class="con-12">
+  <div class="col-12">
+    <mat-chip-set aria-label="Fish selection" class="border-start border-end border-top border-dark border-1 bg-white px-2">
+      <mat-hint align="start" class="text-muted px-2"><i> <b> <small> Mas columnas: </small></b></i>
+      </mat-hint>
+      @for (columnHide of columnsToHide; track columnHide) {
+      <mat-chip-option color="undefined"
+        (selectionChange)="onSelectionChange($event,columnHide)"><small>{{columnHide.aliasColumn}}</small></mat-chip-option>
+      }
+    </mat-chip-set>
+  </div>
+  <div class="col-12">
+
     <div class="mat-elevation-z8 mb-4">
       <table mat-table [dataSource]="dataSource" matSort class="">
 
@@ -23,21 +35,21 @@
           <td mat-cell *matCellDef="let row" class="text-center ">
 
             @if (hasViewAction()) {
-            <button mat-icon-button color="accent" class="border border-1 shadow-sm"
+            <button mat-icon-button color="accent" class="border border-1 mat-elevation-z3 m-1"
               (click)="showActionsOptions.viewAction?.(row)">
               <mat-icon>visibility</mat-icon>
             </button>
             }
 
             @if (hasEditAction()) {
-            <button mat-icon-button color="primary" class="border border-1 shadow-sm"
+            <button mat-icon-button color="primary" class="border border-1 mat-elevation-z3 m-1"
               (click)="showActionsOptions.editAction?.(row)">
               <mat-icon>edit</mat-icon>
             </button>
             }
 
             @if (hasDeleteAction()) {
-            <button mat-icon-button color="warn" class="border border-1 shadow-sm"
+            <button mat-icon-button color="warn" class="border border-1 mat-elevation-z3 m-1"
               (click)="showActionsOptions.deleteAction?.(row)">
               <mat-icon>delete</mat-icon>
             </button>
@@ -56,7 +68,8 @@
         }
 
         <tr mat-header-row *matHeaderRowDef="getOnlyArrayColumnsName(displayedColumns)"></tr>
-        <tr mat-row *matRowDef="let row; columns: getOnlyArrayColumnsName(displayedColumns);" class="table-hover-row"></tr>
+        <tr mat-row *matRowDef="let row; columns: getOnlyArrayColumnsName(displayedColumns);"
+          class="table-row text-break"></tr>
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
