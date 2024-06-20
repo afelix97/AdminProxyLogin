@@ -1,4 +1,4 @@
-import { Component, Inject, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, Input, ViewEncapsulation, inject } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DOCUMENT } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
+import { AppService } from '@services/app.service';
 
 @Component({
   selector: 'app-nav-top',
@@ -17,7 +18,8 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class NavTopComponent {
   @Input() drawer!: MatDrawer;
-  @Input() showNavLeft!: Boolean;
+
+  appService: AppService = inject(AppService);
 
   _dom: any;
   fullScreenGestor: Boolean = false;
@@ -28,8 +30,8 @@ export class NavTopComponent {
 
   ocultarMenu() {
     this.drawer.toggle();
-    this.showNavLeft = !this.showNavLeft;
 
+    this.appService.setStatusNavBar((!this.appService.isExpandNavBar()).toString());
   }
 
   openFullscreen() {

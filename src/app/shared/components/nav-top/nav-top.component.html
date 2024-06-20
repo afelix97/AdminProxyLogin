@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
 <div class="container-fluid">
   <div [class.w-100]="isMobileDevice()" [class.d-flex]="isMobileDevice()" [class.justify-content-start]="isMobileDevice()">
-  @if (!showNavLeft) {
+  @if (!appService.isExpandNavBar()) {
       <a class="navbar-brand animated" [routerLink]="['welcome']"><img alt="logo sistema" class="img-fluid logoNav" src="assets/img/logo/Admin-Proxy-Login.png"></a>
   }
     <button mat-raised-button (click)="ocultarMenu()" class="rounded-pill">
-      @if (showNavLeft) {
+      @if (appService.isExpandNavBar()) {
         <mat-icon class="m-0 icons-options">menu_open</mat-icon>
       } @else {
         <mat-icon class="m-0 icons-options">menu</mat-icon>

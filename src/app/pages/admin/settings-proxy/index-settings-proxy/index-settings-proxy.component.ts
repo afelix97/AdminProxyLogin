@@ -6,11 +6,15 @@ import { SettingProxyServices } from '../services/settings-proxy.service';
 import { ContentConfigurationInterface } from '../interfaces/content-configuration.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewSettingProxyDialogComponent } from '../view-setting-proxy/view-setting-proxy.component';
+import { EditSettingProxyComponent } from '../edit-setting-proxy/edit-setting-proxy.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { StoreSettingProxyComponent } from '../store-setting-proxy/store-setting-proxy.component';
 
 @Component({
   selector: 'app-index-settings-proxy',
   standalone: true,
-  imports: [TablaFiltroPaginacionComponent],
+  imports: [TablaFiltroPaginacionComponent, MatButtonModule, MatIconModule],
   templateUrl: './index-settings-proxy.component.html',
   styleUrl: './index-settings-proxy.component.scss'
 })
@@ -50,16 +54,24 @@ export class IndexSettingsProxyComponent {
     this.dialog.open(ViewSettingProxyDialogComponent, {
       data: row
     });
+
   }
 
   editRow(row: Object | ContentConfigurationInterface) {
-    console.log('Editing row:', row);
     // Lógica para editar el elemento
+    this.dialog.open(EditSettingProxyComponent, {
+      data: row
+    });
   }
 
   deleteRow(row: Object | ContentConfigurationInterface) {
     console.log('Deleting row:', row);
     // Lógica para eliminar el elemento
+  }
+
+  addNewSetting() {
+    // Lógica para editar el elemento
+    this.dialog.open(StoreSettingProxyComponent);
   }
 }
 

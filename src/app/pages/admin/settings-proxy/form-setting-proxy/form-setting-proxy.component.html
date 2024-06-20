@@ -1,0 +1,86 @@
+<form [formGroup]="contentConfigForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Area solicitante</mat-label>
+                    <input matInput formControlName="name" placeholder="Ejemplo: REMEDIACIONES" />
+                    @if (contentConfigForm.get('name')?.invalid) {
+                    <mat-error>{{ getErrorMessage('name') }}</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Application</mat-label>
+                    <input matInput formControlName="type" placeholder="Ejemplo: OFA" />
+                    @if (contentConfigForm.get('type')?.invalid) {
+                    <mat-error>{{ getErrorMessage('type') }}</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Category</mat-label>
+                    <input matInput formControlName="category" placeholder="Ejemplo: EXEC_QUERY" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-12 mt-2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Valor</mat-label>
+                    <input matInput formControlName="value"/>
+                    @if (contentConfigForm.get('value')?.invalid) {
+                    <mat-error>{{ getErrorMessage('value') }}</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+            <div class="mat-elevation-z8 pt-2 rounded mb-3 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h6>Configuración del Endpoint</h6>
+                    </div>
+                    <div [formGroupName]="'endpoint'" class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Método</mat-label>
+                                    <mat-select formControlName="method">
+                                        @for (httpMethod of httpMethods; track $index) {
+                                        <mat-option [value]="httpMethod">{{ httpMethod }}</mat-option>
+                                        }
+                                    </mat-select>
+                                    <mat-error *ngIf="contentConfigForm.get('endpoint.method')?.invalid">
+                                        {{ getErrorMessage('endpoint.method') }}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>IP o Hostname</mat-label>
+                                    <input matInput formControlName="ip" />
+                                    @if (contentConfigForm.get('endpoint')?.get('ip')?.invalid) {
+                                    <mat-error>{{ getErrorMessage('ip','endpoint') }} </mat-error>
+                                    }
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Puerto</mat-label>
+                                    <input matInput formControlName="port" />
+                                    @if (contentConfigForm.get('endpoint')?.get('port')?.invalid) {
+                                    <mat-error>{{ getErrorMessage('port', 'endpoint') }}</mat-error>
+                                    }
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

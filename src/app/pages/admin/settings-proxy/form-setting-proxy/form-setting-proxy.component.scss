@@ -1,0 +1,13 @@
+mat-form-field {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+/* Estilo para input deshabilitado pero no opaco */
+input[disabled] {
+    /* Color de fondo */
+    color: #000 !important;
+    /* Color del texto */
+    cursor: not-allowed;
+    /* Quitar outline (borde de enfoque) */
+}

@@ -3,6 +3,7 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { MatDrawer, MatDrawerMode, MatSidenavModule } from '@angular/material/sidenav';
 import { NavTopComponent } from '@shared/components/nav-top/nav-top.component';
 import { NavLeftComponent } from '@shared/components/nav-left/nav-left.component';
+import { AppService } from './core/services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { NavLeftComponent } from '@shared/components/nav-left/nav-left.component
 })
 export class AppComponent {
   title = 'App component';
-  showNavLeft: boolean = true;
+  showNavLeft: boolean = inject(AppService).isExpandNavBar();
   router: Router = inject(Router);
   isViewWelcome: boolean = false;
 
@@ -24,9 +25,10 @@ export class AppComponent {
   @ViewChild('drawer') drawer!: MatDrawer;
 
   ngOnInit() {
+    
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) { // Verifica si el evento es una navegación completada
-        if (this.router.url === '/welcome') {
+        if (this.router.url === '/welcome' || this.router.url === '/page-not-found') {
           this.isViewWelcome = true;
         } else {
           this.isViewWelcome = false;

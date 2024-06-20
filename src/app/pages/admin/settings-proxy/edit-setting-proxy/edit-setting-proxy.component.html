@@ -1,0 +1,10 @@
+<h2 mat-dialog-title class="bg-dark bg-gradient text-white"><b>Actualizacion de configuracion #{{ data.content_configuration_id }} <span
+            class="badge text-bg-secondary">v{{ data.version }}</span>:</b></h2>
+<mat-dialog-content class="pb-0 pt-3">
+    <app-form-setting-proxy [valueObject]="valueObject" [data]="data" />
+</mat-dialog-content>
+<hr>
+<mat-dialog-actions class="pb-3 justify-content-evenly">
+    <button mat-raised-button class="text-danger" (click)="closeDialog()">Cancelar</button>
+    <button mat-raised-button class="text-success" (click)="submitForm()">Actualizar</button>
+</mat-dialog-actions>

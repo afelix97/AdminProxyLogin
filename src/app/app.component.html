@@ -4,7 +4,7 @@
     <app-nav-left />
   </mat-drawer>
   <mat-drawer-content class="bg-content" [class]="isViewWelcome ? 'bg-gradient bg-light' : ''">
-    <app-nav-top [drawer]="drawer" [showNavLeft]="showNavLeft" />
+    <app-nav-top [drawer]="drawer" />
     <router-outlet />
   </mat-drawer-content>
 </mat-drawer-container>

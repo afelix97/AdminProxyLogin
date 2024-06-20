@@ -6,6 +6,8 @@
     "paths": {
       "@guards/*":["app/core/guards/*"],
       "@interceptors/*":["app/core/interceptors/*"],
+      "@global/*":["app/core/global/*"],
+      "@services/*":["app/core/services/*"],
       "@pages/*":["app/pages/*"],
       "@shared/*":["app/shared/*"]
     },

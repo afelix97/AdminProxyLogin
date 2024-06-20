@@ -1,27 +1,43 @@
-<h2 mat-dialog-title><b class="text-muted">Detalle de la configuracion #{{ data.content_configuration_id }}:</b></h2>
-<hr>
-<mat-dialog-content>
-
-  <p><strong>Name:</strong> {{ data.name }}</p>
-  <p><strong>Application:</strong> {{ data.type }}</p>
-  <p><strong>Category:</strong> {{ data.category }}</p>
-  <p><strong>Valor:</strong> {{ data.value }}</p>
-  @if(data.creation_date){
-  <p><strong>Fecha en que se dio de alta:</strong> {{ data.creation_date }}</p>
-  }
-  @if(data.change_date){
-  <p><strong>Ultima fecha Actualización:</strong> {{ data.change_date }}</p>
-  }
-  @if(data.created_by){
-  <p><strong>Creado por:</strong> {{ data.created_by }}</p>
-  }
-  @if(data.changed_by){
-  <p><strong>Actualizado por:</strong> {{ data.changed_by }}</p>
-  }
-  @if(data.version){
-  <p><strong>Version:</strong> {{ data.version }}</p>
-  }
-
+<h2 mat-dialog-title class="bg-dark bg-gradient text-white"><b>Detalle de la configuracion #{{ data.content_configuration_id }}<span
+      class="badge text-bg-secondary">v{{ data.version }}</span>:</b></h2>
+<mat-dialog-content class="pt-3 pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 text-center">
+        <p><strong>Method:</strong><br> {{ valueObject?.type }}</p>
+      </div>
+      <div class="col-6 text-center">
+        @if (endpointFormat) {
+        <p><strong>Endpoint:</strong><br> {{ endpointFormat }}</p>
+        }
+      </div>
+      <div class="col-12">
+        <hr>
+      </div>
+      <div class="col-4">
+        <p><strong>Name:</strong> {{ data.name }}</p>
+      </div>
+      <div class="col-4">
+        <p><strong>Application:</strong> {{ data.type }}</p>
+      </div>
+      <div class="col-4">
+        <p><strong>Category:</strong> {{ data.category }}</p>
+      </div>
+      <div class="col-12 text-center">
+        <pre><strong>Value:</strong><code>{{ data.value }}</code></pre>
+      </div>
+      <div class="col-12">
+        @if(data.created_by){
+        <p><strong>Creado por:</strong> {{ data.created_by }}, el {{ dateCreateFormat }}.</p>
+        }
+      </div>
+      <div class="col-12">
+        @if(data.change_date){
+        <p><strong>Ultima Actualización:</strong> El {{ dateUpdateFormat }}, por {{ data.changed_by }}</p>
+        }
+      </div>
+    </div>
+  </div>
 </mat-dialog-content>
 <hr>
 <mat-dialog-actions class="justify-content-center">
