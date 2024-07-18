@@ -25,7 +25,7 @@ export class AppComponent {
   @ViewChild('drawer') drawer!: MatDrawer;
 
   ngOnInit() {
-    
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) { // Verifica si el evento es una navegación completada
         if (this.router.url === '/welcome' || this.router.url === '/page-not-found') {

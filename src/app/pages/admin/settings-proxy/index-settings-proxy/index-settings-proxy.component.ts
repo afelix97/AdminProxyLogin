@@ -10,6 +10,7 @@ import { EditSettingProxyComponent } from '../edit-setting-proxy/edit-setting-pr
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { StoreSettingProxyComponent } from '../store-setting-proxy/store-setting-proxy.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-index-settings-proxy',
@@ -67,6 +68,17 @@ export class IndexSettingsProxyComponent {
   deleteRow(row: Object | ContentConfigurationInterface) {
     console.log('Deleting row:', row);
     // Lógica para eliminar el elemento
+    Swal.fire({
+      title: "¿Estas seguro de eliminar el registro?",
+      showCancelButton: true,
+      confirmButtonText: "Si, Eliminar",
+      confirmButtonColor: "#d33"
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Eliminado con exito!", "", "success");
+      }
+    });
   }
 
   addNewSetting() {

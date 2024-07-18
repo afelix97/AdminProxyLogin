@@ -7,30 +7,33 @@ import Swal from 'sweetalert2';
   standalone: true,
   imports: [],
   templateUrl: './welcome.component.html',
-  styleUrl: './welcome.component.scss'
+  styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent {
 
-  ngAfterViewInit(): void {
-    
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-    Swal.fire({
-      title: 'Error!',
-      text: 'Do you want to continue',
-      icon: 'error',
-      confirmButtonText: 'Cool'
-    })
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
 
+    setTimeout(() => {
 
-    Push.create("Bienvenido!", {
-      body: "Estas list@ para empezar?",
-      icon: 'assets/img/logo/AdminProxyLogin.png',
-      timeout: 10000,
-      onClick: function () {
-        window.focus();
-        Push.clear();
-      }
-    });
+    /*  Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Hola!",
+        showConfirmButton: false,
+        timer: 1000
+      });*/
+
+      Push.create("Bienvenido!", {
+        body: "Estas list@ para empezar?",
+        icon: 'assets/img/logo/AdminProxyLogin.png',
+        timeout: 10000,
+        onClick: function () {
+          window.focus();
+          Push.clear();
+        }
+      });
+    }, 1000);
   }
 }
